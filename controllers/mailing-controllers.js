@@ -129,7 +129,7 @@ const sendMail = async (req, res, next) => {
         }
       }
     );
-    res.status(200).json({ message: "Correo enviado exitosamente!. Gracias!" });
+    res.status(200).json({ emailSent: true });
   } catch (err) {
     res.json({
       message: "Ha ocurrido un error al reenviar el email de respuesta",
