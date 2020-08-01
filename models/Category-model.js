@@ -12,9 +12,9 @@ const CategorySchema = new Schema({
   },
   fgLogo: {
     type: String,
-    required: true,
+    required: false,
   },
-  products: [{ type: mongoose.Types.ObjectId, ref: "Product" }],
+  products: [{ type: mongoose.Types.ObjectId, required: true, ref: "Product" }],
 });
 
-module.exports = Categories = mongoose.model("Categories", CategorySchema);
+module.exports = mongoose.model("Category", CategorySchema);

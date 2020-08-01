@@ -22,21 +22,27 @@ const ProductSchema = new Schema({
     type: Array,
     required: false,
   },
+  flavors: {
+    type: Array,
+    required: false,
+  },
   hasFragance: {
     type: Boolean,
     required: false,
   },
   domesticUse: {
     type: Boolean,
-    required: true,
+    required: false,
   },
   industryUse: {
     type: Boolean,
-    required: true,
+    required: false,
   },
 
-  category: [{ type: mongoose.Types.ObjectId, ref: "Categories" }],
+  categories: [
+    { type: mongoose.Types.ObjectId, required: false, ref: "Category" },
+  ],
   creationDate: { type: Date, required: true, default: Date.now },
 });
 
-module.exports = Products = mongoose.model("Products", ProductSchema);
+module.exports = mongoose.model("Product", ProductSchema);
