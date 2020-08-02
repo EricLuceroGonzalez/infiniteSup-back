@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 
 const productsRoutes = require("../routes/products-routes");
 const mailingRoutes = require("../routes/mail-routes");
+const contentRoutes = require("../routes/content-routes");
 const HttpError = require("../models/http-error");
 dotenv.config();
 // const passport = require("passport");
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 // ----------------------   CRUD    ----------------------------------------
 app.use("/api/products", productsRoutes);
 app.use("/api/mailing", mailingRoutes);
+app.use("/api/content", contentRoutes);
 // ----------------------   ERRORS    ----------------------------------------
 // Error handler when no endpoint or direction is found "NEXT()""
 app.use((req, res, next) => {

@@ -11,13 +11,13 @@ const Product = require("../models/Product-model");
 const Blog = require("../models/Blog-model");
 
 const postCategory = async (req, res, next) => {
-  console.log("postCategory");
-  console.log(req.body);
+  // console.log("postCategory");
+  // console.log(req.body);
 
   // Check error on req
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors);
+    // console.log(errors);
     const error = new HttpError(
       "Solicitud invalida, revisa y vuelve a intentar.",
       500
@@ -47,17 +47,14 @@ const postCategory = async (req, res, next) => {
 };
 
 const getCategories = async (req, res, next) => {
-  console.log("getCategories");
-  console.log(Date.now());
-
   let categories;
   try {
-    console.log("inside try");
+    // console.log("inside try");
     categories = await Category.find({}).populate('products');
     //   send response
     res.status(201).json({ categories: categories });
   } catch (err) {
-    console.log("inside catch");
+    // console.log("inside catch");
     const error = new HttpError(
       "Error al solicitar tus categorías, intenta de nuevo.",
       500
@@ -67,13 +64,13 @@ const getCategories = async (req, res, next) => {
 };
 
 const postProduct = async (req, res, next) => {
-  console.log("postProduct");
-  console.log(req.body);
+  // console.log("postProduct");
+  // console.log(req.body);
 
   // Check error on req
   const errors = validationResult(req.body);
   if (!errors.isEmpty()) {
-    console.log(errors);
+    // console.log(errors);
     const error = new HttpError(
       "Solicitud invalida, revisa y vuelve a intentar.",
       500
@@ -125,7 +122,7 @@ const postProduct = async (req, res, next) => {
     await category.save({});
   });
 
-  console.log(idArrays);
+  // console.log(idArrays);
 
   if (!idArrays) {
     const error = new HttpError(
@@ -152,13 +149,13 @@ const postProduct = async (req, res, next) => {
 };
 
 const getProducts = async (req, res, next) => {
-  console.log("postCategory");
-  console.log(req.body);
+  // console.log("postCategory");
+  // console.log(req.body);
 
   // Check error on req
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors);
+    // console.log(errors);
     const error = new HttpError(
       "Solicitud invalida, revisa y vuelve a intentar.",
       500
@@ -167,12 +164,12 @@ const getProducts = async (req, res, next) => {
   }
   let products;
   try {
-    console.log("inside try");
+    // console.log("inside try");
     products = await Product.find({});
     //   send response
     res.status(201).json({ products: products });
   } catch (err) {
-    console.log("inside catch");
+    // console.log("inside catch");
     const error = new HttpError(
       "Error al solicitar tus productos, intenta de nuevo.",
       500
