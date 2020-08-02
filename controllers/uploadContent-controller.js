@@ -61,7 +61,45 @@ const getBlogEntry = async (req, res, next) => {
   } catch (err) {}
 };
 
+const getBlogEntryId = async (req, res, next) => {
+  console.log('getBlogEntryId');
+  
+  // Check error on req
+  const errors = validationResult(req.body);
+  if (!errors.isEmpty()) {
+    console.log(errors);
+    const error = new HttpError(
+      "Solicitud invalida, revisa y vuelve a intentar.",
+      500
+    );
+    return next(error);
+  }
+
+  let theId = req.params.id;
+  console.log(theId);
+  
+  try {
+    let blogEntry;
+    try {
+      // console.log("inside try");
+      blogEntry = await BlogEntry.findById(theId);
+      //   send response
+      res
+        .status(201)
+        .json({ blogContent: blogEntry.toObject({ getters: true }) });
+    } catch (err) {
+      // console.log("inside catch");
+      const error = new HttpError(
+        "Error al solicitar tus categorías, intenta de nuevo.",
+        500
+      );
+      return next(Error);
+    }
+  } catch (err) {}
+};
+
 // const uploadBlogEntry = async(req, res, next) => {};
 
 exports.uploadBlogEntry = uploadBlogEntry;
 exports.getBlogEntry = getBlogEntry;
+exports.getBlogEntryId = getBlogEntryId;

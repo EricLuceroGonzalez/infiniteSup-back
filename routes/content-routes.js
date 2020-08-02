@@ -17,6 +17,7 @@ const uploadContentControllers = require("../controllers/uploadContent-controlle
 
 // **********************  MIDDLEWARE FUNCTIONS & CONTROLLERS  **********************
 router.get("/getBlog", uploadContentControllers.getBlogEntry);
+router.get("/getBlog/:id", uploadContentControllers.getBlogEntryId);
 router.post(
   "/postBlog",
   [
