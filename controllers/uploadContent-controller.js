@@ -62,8 +62,6 @@ const getBlogEntry = async (req, res, next) => {
 };
 
 const getBlogEntryId = async (req, res, next) => {
-  console.log('getBlogEntryId');
-  
   // Check error on req
   const errors = validationResult(req.body);
   if (!errors.isEmpty()) {
@@ -76,8 +74,7 @@ const getBlogEntryId = async (req, res, next) => {
   }
 
   let theId = req.params.id;
-  console.log(theId);
-  
+
   try {
     let blogEntry;
     try {
@@ -97,8 +94,6 @@ const getBlogEntryId = async (req, res, next) => {
     }
   } catch (err) {}
 };
-
-// const uploadBlogEntry = async(req, res, next) => {};
 
 exports.uploadBlogEntry = uploadBlogEntry;
 exports.getBlogEntry = getBlogEntry;
