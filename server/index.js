@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 app.use("/api/products", productsRoutes);
 app.use("/api/mailing", mailingRoutes);
 app.use("/api/content", contentRoutes);
-app.use("/api/user", userRoutes);
+app.use("/api/users", userRoutes);
 // ----------------------   ERRORS    ----------------------------------------
 // Error handler when no endpoint or direction is found "NEXT()""
 app.use((req, res, next) => {

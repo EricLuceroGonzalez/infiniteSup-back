@@ -81,6 +81,7 @@ const postProduct = async (req, res, next) => {
   //   const { categoryName, logo, fgLogo } = req.body;
 
   const {
+    isSupplies,
     image,
     name,
     description,
@@ -90,9 +91,11 @@ const postProduct = async (req, res, next) => {
     domesticUse,
     industryUse,
     flavors,
+    categories
   } = req.body;
 
   const createdProduct = new Product({
+    isSupplies,
     image,
     name,
     description,
@@ -102,14 +105,15 @@ const postProduct = async (req, res, next) => {
     domesticUse,
     industryUse,
     flavors,
+    categories
   });
 
   let category;
   let idArrays = [];
   // try {
-  idArrays = req.body.cats.map(async (item) => {
+  idArrays = req.body.categories.map(async (item) => {
     try {
-      category = await Category.findOne({ categoryName: item });
+      category = await Category.findById(item);
     } catch (err) {
       const error = new HttpError(
         "Esta categoría no esta registrada. Intenta de nuevo.",
