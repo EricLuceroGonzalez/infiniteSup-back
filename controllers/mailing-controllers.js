@@ -9,10 +9,10 @@ const { validationResult } = require("express-validator");
 var nodemailer = require("nodemailer");
 
 const sendMail = async (req, res, next) => {
-  console.log("*****      sendMail      *****");
+  // console.log("*****      sendMail      *****");
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors);
+    // console.log(errors);
     const error = new HttpError("Invalid inputs, please check your data", 422);
     return next(error);
   }

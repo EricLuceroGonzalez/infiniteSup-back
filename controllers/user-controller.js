@@ -12,16 +12,9 @@ const HttpError = require("../models/http-error");
 const User = require("../models/User-model");
 
 const signup = async (req, res, next) => {
-  console.log("inside signup");
-  console.log(req.body);
-
   // Call validation RESULT before, to check validity
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log("inside errors");
-    console.log(req.body);
-    console.log("*******************************");
-    console.log(errors);
     const error = new HttpError(
       "Los valores introducidos no son validos. Intenta de nuevo",
       422
@@ -67,7 +60,7 @@ const signup = async (req, res, next) => {
     email,
     password: hashedPassword, // Store the hashed password
   });
-  console.log(`createdUser: ${createdUser}`);
+  // console.log(`createdUser: ${createdUser}`);
 
   //   Create USER ---> save() to Mongo, as async => await
   try {
@@ -78,8 +71,8 @@ const signup = async (req, res, next) => {
   }
 
   // generate TOKEN
-  console.log(`process.env.JWT_KEY:`);
-  console.log(process.env.JWT_KEY);
+  // console.log(`process.env.JWT_KEY:`);
+  // console.log(process.env.JWT_KEY);
   let token;
   try {
     token = jwt.sign(
