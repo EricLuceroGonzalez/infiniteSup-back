@@ -92,7 +92,7 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
-
+  
   // FIND IF HE USER ALREADY EXISTS
   let existingUser;
   try {
@@ -114,6 +114,10 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
+  console.log((`name: ${email}`));
+  console.log(password);
+  
+  
   // Check the password, compare to the encrypted and give a token
   let isValidPassword = false;
   try {

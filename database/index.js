@@ -13,7 +13,7 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (!err) {
-      // console.log("MongoDB - Conexión exitosa :):");
+      console.log("MongoDB - Conexión exitosa :):");
     } else {
       console.log(`Error en conexión: \n ${err}`);
     }
