@@ -38,7 +38,8 @@ const sendMail = async (req, res, next) => {
         subject: `infinite-supplies.com `, // Subject line
         html: `<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
         <div
-        style="width: 80%;
+        style="width: 330px; 
+        max-width: 900px;
         border: 3px solid #0411a3;    
         margin: 2px auto">
         <div
@@ -97,10 +98,8 @@ const sendMail = async (req, res, next) => {
           margin: 2rem auto;
           display: grid;  grid-template-columns: auto auto auto;
           ">
-            <div class="grid-item">    <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></div>
-            <div class="grid-item"><img src="https://img.icons8.com/nolan/64/email.png"/></div>
-            <div class="grid-item"><img src="https://img.icons8.com/nolan/64/phone.png"/></div>
-            <div class="grid-item">
+            <div class="grid-item">    
+              <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/>
               <a 
               style="text-decoration: none; 
               font-family: 'Montserrat', sans-serif;
@@ -110,6 +109,7 @@ const sendMail = async (req, res, next) => {
                 @infinitesuppliessa</a>
             </div>
             <div class="grid-item">
+              <img src="https://img.icons8.com/nolan/64/email.png"/>
               <a
               style="text-decoration: none; 
               font-size: 0.7rem;
@@ -117,13 +117,16 @@ const sendMail = async (req, res, next) => {
               color: #9e9efd"
                href="mailto: info@infinite-supplies.com">info@infinite-supplies.com</a>
             </div>
-            <div 
-            style="text-decoration: none; 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            color: #9e9efd"
-            class="grid-item">(+507) 6291-7954</div>
-          </div>   
+            <div class="grid-item">
+              <img src="https://img.icons8.com/nolan/64/phone.png"/>
+              <div 
+              style="text-decoration: none; 
+              font-family: 'Montserrat', sans-serif;
+              font-size: 0.7rem;
+              color: #9e9efd"
+              class="grid-item">(+507) 6291-7954</div>
+            </div>   
+            </div>
         </div>
         </div>`,
       },
@@ -139,7 +142,8 @@ const sendMail = async (req, res, next) => {
               subject: `infinite-supplies.com | Hola ${name}`, // Subject line
               html: `<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
               <div
-              style="width: 80%;
+              style="width: 330px; 
+              max-width: 900px;
               border: 3px solid #0411a3;    
               margin: 2px auto">
               <div
@@ -198,10 +202,8 @@ const sendMail = async (req, res, next) => {
                 margin: 2rem auto;
                 display: grid;  grid-template-columns: auto auto auto;
                 ">
-                  <div class="grid-item">    <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></div>
-                  <div class="grid-item"><img src="https://img.icons8.com/nolan/64/email.png"/></div>
-                  <div class="grid-item"><img src="https://img.icons8.com/nolan/64/phone.png"/></div>
-                  <div class="grid-item">
+                  <div class="grid-item">    
+                    <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/>
                     <a 
                     style="text-decoration: none; 
                     font-family: 'Montserrat', sans-serif;
@@ -211,6 +213,7 @@ const sendMail = async (req, res, next) => {
                       @infinitesuppliessa</a>
                   </div>
                   <div class="grid-item">
+                    <img src="https://img.icons8.com/nolan/64/email.png"/>
                     <a
                     style="text-decoration: none; 
                     font-size: 0.7rem;
@@ -218,13 +221,16 @@ const sendMail = async (req, res, next) => {
                     color: #9e9efd"
                      href="mailto: info@infinite-supplies.com">info@infinite-supplies.com</a>
                   </div>
-                  <div 
-                  style="text-decoration: none; 
-                  font-family: 'Montserrat', sans-serif;
-                  font-size: 0.7rem;
-                  color: #9e9efd"
-                  class="grid-item">(+507) 6291-7954</div>
-                </div>   
+                  <div class="grid-item">
+                    <img src="https://img.icons8.com/nolan/64/phone.png"/>
+                    <div 
+                    style="text-decoration: none; 
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.7rem;
+                    color: #9e9efd"
+                    class="grid-item">(+507) 6291-7954</div>
+                  </div>   
+                  </div>
               </div>
               </div>`,
             },
