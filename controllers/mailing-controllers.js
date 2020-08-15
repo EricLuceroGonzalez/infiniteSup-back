@@ -38,8 +38,7 @@ const sendMail = async (req, res, next) => {
         subject: `infinite-supplies.com `, // Subject line
         html: `<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
         <div
-        style="width: 330px; 
-        max-width: 900px;
+        style="width: 75%; 
         border: 3px solid #0411a3;    
         margin: 2px auto">
         <div
@@ -142,8 +141,7 @@ const sendMail = async (req, res, next) => {
               subject: `infinite-supplies.com | Hola ${name}`, // Subject line
               html: `<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
               <div
-              style="width: 330px; 
-              max-width: 900px;
+              style="width: 75%; 
               border: 3px solid #0411a3;    
               margin: 2px auto">
               <div
