@@ -20,10 +20,8 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true })); // image thin
 app.use(bodyParser.json());
 app.use(bodyParser.json({ limit: "50mb", extended: true })); // image thingg
 
+
 app.use(cors());
-
-// app.use(passport.initialize()); // Passport config
-
 // CORS error: set the headers to prevent (Middleware):
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
